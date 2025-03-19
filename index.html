@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>PB_X01 | Arman</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            background-image: url('photo.jgp');
+            background-size: cover;
+            background-attachment: fixed;
+            font-family: 'Arial', sans-serif;
+            color: white;
+            min-height: 100vh;
+        }
+
+        .bio-box {
+            background: rgba(0, 0, 0, 0.7);
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 30px;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            border: 2px solid #00ff00;
+        }
+
+        .title {
+            text-align: center;
+            font-size: 2.5em;
+            margin-bottom: 30px;
+            text-shadow: 2px 2px 4px black;
+        }
+
+        .bio-line {
+            margin: 15px 0;
+            padding: 10px;
+            border-left: 3px solid #ff0000; /* Single color for all lines */
+            transition: 0.3s;
+        }
+
+        .label {
+            color: #00ff00; /* Unified label color */
+            font-weight: bold;
+        }
+
+        .value {
+            color: #ffffff;
+            margin-left: 10px;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 10px 0;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .telegram-btn {
+            background: linear-gradient(45deg, #0088cc, #1e90ff);
+            color: white;
+        }
+
+        .support-btn {
+            background: linear-gradient(45deg, #ff0000, #ff4500); /* Red gradient */
+            color: white;
+        }
+
+        .button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 15px rgba(255, 0, 0, 0.5); /* Red glow */
+        }
+
+        #sticker-video {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 150px;
+            border-radius: 15px;
+            border: 2px solid #ff0000; /* Red border */
+            box-shadow: 0 0 20px rgba(255, 0, 0, 0.5);
+        }
+    </style>
+</head>
+<body>
+    <div class="bio-box">
+        <h1 class="title">MR. ARMAN <span style="color: #ff0000;">OWNER</span></h1>
+        
+        <div class="bio-line">
+            <span class="label">NAME:</span>
+            <span class="value">ARMAN</span>
+        </div>
+
+        <div class="bio-line">
+            <span class="label">AGE:</span>
+            <span class="value">14</span>
+        </div>
+
+        <div class="bio-line">
+            <span class="label">LOCATION:</span>
+            <span class="value">ASSAM GUWAHATI</span>
+        </div>
+
+        <div class="bio-line">
+            <span class="label">IG ACCOUNT:</span>
+            <span class="value">(NOT AVAILABLE)</span>
+        </div>
+
+        <div class="bio-line">
+            <span class="label">TELEGRAM:</span>
+            <a href="t.me/PB_X01" class="button telegram-btn">PB_X01</a>
+        </div>
+
+        <div class="bio-line">
+            <span class="label">SUPPORT:</span>
+            <a href="t.me/PB_X01_support" class="button support-btn">JOIN GROUP</a>
+        </div>
+    </div>
+
+    <video id="sticker-video" autoplay loop controls>
+        <source src="video.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+</body>
+</html>
