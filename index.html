@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ᴘʙ_x01 | ᴀʀᴍᴀɴ</title>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@500&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Ubuntu', sans-serif;
+        }
+
+        #bg-video {
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            min-width: 100%;
+            min-height: 100%;
+            z-index: -1;
+            filter: brightness(0.4);
+        }
+
+        .overlay {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            z-index: 0;
+        }
+
+        .bio-box {
+            position: relative;
+            background: rgba(0, 0, 0, 0.7);
+            max-width: 680px;
+            margin: 50px auto;
+            padding: 30px;
+            border-radius: 15px;
+            backdrop-filter: blur(12px);
+            border: 2px solid #00ff00;
+            box-shadow: 0 0 40px rgba(0,255,0,0.3);
+            z-index: 1;
+        }
+
+        .title {
+            text-align: center;
+            font-size: 2.8em;
+            margin-bottom: 30px;
+            background: linear-gradient(45deg, #00ff00, #ff0000);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            letter-spacing: 2px;
+        }
+
+        .section-title {
+            font-size: 1.8em;
+            margin: 25px 0;
+            color: #00ff00;
+            text-shadow: 0 0 10px rgba(0,255,0,0.5);
+            padding-left: 15px;
+            border-left: 4px solid #ff0000;
+        }
+
+        .bio-line {
+            margin: 20px 0;
+            padding: 15px;
+            border-radius: 8px;
+            background: rgba(255,255,255,0.05);
+            transition: 0.3s;
+        }
+
+        .bio-line:hover {
+            transform: translateX(10px);
+            box-shadow: 0 0 15px rgba(255,0,0,0.3);
+        }
+
+        .label {
+            font-size: 1.2em;
+            background: linear-gradient(90deg, #00ff00, #ff0000);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: inline-block;
+            margin-right: 10px;
+        }
+
+        .value {
+            font-size: 1.1em;
+            color: #ffffff;
+            text-shadow: 0 0 8px rgba(255,255,255,0.3);
+        }
+
+        .button {
+            display: inline-block;
+            padding: 12px 25px;
+            margin: 10px 5px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+            border: 2px solid transparent;
+            background: linear-gradient(45deg, #0088cc, #1e90ff);
+            color: white !important;
+        }
+
+        .button:hover {
+            transform: scale(1.08);
+            box-shadow: 0 0 20px rgba(255,0,0,0.6);
+            border-color: #ff0000;
+        }
+
+        .video-controls {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            display: flex;
+            gap: 10px;
+            z-index: 2;
+        }
+
+        .control-btn {
+            padding: 8px 15px;
+            background: rgba(0,0,0,0.7);
+            border: 1px solid #00ff00;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .control-btn:hover {
+            background: #00ff00;
+            color: black;
+        }
+
+        .highlight {
+            color: #00ff00;
+            text-shadow: 0 0 10px rgba(0,255,0,0.7);
+        }
+    </style>
+</head>
+<body>
+    <video id="bg-video" autoplay muted loop>
+        <source src="video.mp4" type="video/mp4">
+    </video>
+    <div class="overlay"></div>
+
+    <div class="video-controls">
+        <button class="control-btn" onclick="togglePlay()">⏯ PLAY</button>
+        <button class="control-btn" onclick="toggleMute()">🔇 MUTE</button>
+    </div>
+
+    <div class="bio-box">
+        <h1 class="title">ʜɪɪ ᴡᴇʟᴄᴏᴍᴇ 🌟</h1>
+
+        <h2 class="section-title">ᴀʙᴏᴜᴛ ᴍᴇ? 🤔</h2>
+        
+        <div class="bio-line">
+            <span class="label">ɴᴀᴍᴇ:</span>
+            <span class="value">➻ ᴍʀ ᴀʀᴍᴀɴ ✨</span>
+        </div>
+
+        <div class="bio-line">
+            <span class="label">ᴀɢᴇ:</span>
+            <span class="value">➻ 16 - 17 🎂</span>
+        </div>
+
+        <div class="bio-line">
+            <span class="label">ʀᴇʟɪɢɪᴏɴ:</span>
+            <span class="value">➻ ᴍᴜsʟɪᴍ ❤️</span>
+        </div>
+
+        <div class="bio-line">
+            <span class="label">ғʀᴏᴍ:</span>
+            <span class="value">➻ ᴀssᴀᴍ 🌄</span>
+        </div>
+
+        <h2 class="section-title">ᴄᴏɴɴᴇᴄᴛɪᴏɴs 🔗</h2>
+
+        <div class="bio-line">
+            <span class="label">ɢʀᴏᴜᴘ:</span>
+            <a href="https://t.me/team_x_og" class="button">ᴛᴇᴀᴍ x ᴏɢ 🚀</a>
+        </div>
+
+        <div class="bio-line">
+            <span class="label">ᴄʜᴀɴɴᴇʟ:</span>
+            <a href="https://t.me/clickmekarna" class="button">sᴜᴘᴘᴏʀᴛ ᴄʜᴀᴛ 📢</a>
+        </div>
+
+        <h2 class="section-title">ʟɪɴᴋs 🌐</h2>
+
+        <div class="bio-line">
+            <span class="label">ᴘʀᴏғɪʟᴇ:</span>
+            <a href="https://t.me/pb_x01" class="button">ᴍʀ_ᴀʀᴍᴀɴ_ᴏᴡɴᴇʀ ✅</a>
+        </div>
+
+        <div class="bio-line">
+            <span class="label">sᴏᴄɪᴀʟ:</span>
+            <span class="value highlight">ɴᴏᴛ ᴀᴠᴀɪʟᴀʙʟᴇ 🚫</span>
+        </div>
+
+        <h2 class="section-title">ɪɴᴛᴇʀᴇsᴛs & ʜᴏʙʙɪᴇs 🎮</h2>
+
+        <div class="bio-line">
+            <span class="label">🎨➻</span>
+            <span class="value">ɢᴀᴍɪɴɢ & ᴄᴏᴅɪɴɢ</span>
+        </div>
+
+        <div class="bio-line">
+            <span class="label">🎵➻</span>
+            <span class="value">ᴍᴜsɪᴄ & ʀᴇᴀᴅɪɴɢ</span>
+        </div>
+    </div>
+
+    <script>
+        const video = document.getElementById('bg-video');
+        let isMuted = true;
+
+        function togglePlay() {
+            if (video.paused) {
+                video.play();
+                document.querySelector('.control-btn:nth-child(1)').textContent = '⏸ PAUSE';
+            } else {
+                video.pause();
+                document.querySelector('.control-btn:nth-child(1)').textContent = '⏯ PLAY';
+            }
+        }
+
+        function toggleMute() {
+            isMuted = !isMuted;
+            video.muted = isMuted;
+            document.querySelector('.control-btn:nth-child(2)').textContent = isMuted ? '🔇 MUTE' : '🔊 UNMUTE';
+        }
+    </script>
+</body>
+</htm<!DOCTYPE html>
+<html>
+<head>
+    <title>ᴘʙ_x01 | ᴀʀᴍᴀɴ</title>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@500&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Ubuntu', sans-serif;
+        }
+
+        #bg-video {
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            min-width: 100%;
+            min-height: 100%;
+            z-index: -1;
+            filter: brightness(0.4);
+        }
+
+        .overlay {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            z-index: 0;
+        }
+
+        .bio-box {
+            position: relative;
+            background: rgba(0, 0, 0, 0.7);
+            max-width: 680px;
+            margin: 50px auto;
+            padding: 30px;
+            border-radius: 15px;
+            backdrop-filter: blur(12px);
+            border: 2px solid #00ff00;
+            box-shadow: 0 0 40px rgba(0,255,0,0.3);
+            z-index: 1;
+        }
+
+        .title {
+            text-align: center;
+            font-size: 2.8em;
+            margin-bottom: 30px;
+            background: linear-gradient(45deg, #00ff00, #ff0000);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            letter-spacing: 2px;
+        }
+
+        .section-title {
+            font-size: 1.8em;
+            margin: 25px 0;
+            color: #00ff00;
+            text-shadow: 0 0 10px rgba(0,255,0,0.5);
+            padding-left: 15px;
+            border-left: 4px solid #ff0000;
+        }
+
+        .bio-line {
+            margin: 20px 0;
+            padding: 15px;
+            border-radius: 8px;
+            background: rgba(255,255,255,0.05);
+            transition: 0.3s;
+        }
+
+        .bio-line:hover {
+            transform: translateX(10px);
+            box-shadow: 0 0 15px rgba(255,0,0,0.3);
+        }
+
+        .label {
+            font-size: 1.2em;
+            background: linear-gradient(90deg, #00ff00, #ff0000);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: inline-block;
+            margin-right: 10px;
+        }
+
+        .value {
+            font-size: 1.1em;
+            color: #ffffff;
+            text-shadow: 0 0 8px rgba(255,255,255,0.3);
+        }
+
+        .button {
+            display: inline-block;
+            padding: 12px 25px;
+            margin: 10px 5px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+            border: 2px solid transparent;
+            background: linear-gradient(45deg, #0088cc, #1e90ff);
+            color: white !important;
+        }
+
+        .button:hover {
+            transform: scale(1.08);
+            box-shadow: 0 0 20px rgba(255,0,0,0.6);
+            border-color: #ff0000;
+        }
+
+        .video-controls {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            display: flex;
+            gap: 10px;
+            z-index: 2;
+        }
+
+        .control-btn {
+            padding: 8px 15px;
+            background: rgba(0,0,0,0.7);
+            border: 1px solid #00ff00;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .control-btn:hover {
+            background: #00ff00;
+            color: black;
+        }
+
+        .highlight {
+            color: #00ff00;
+            text-shadow: 0 0 10px rgba(0,255,0,0.7);
+        }
+    </style>
+</head>
+<body>
+    <video id="bg-video" autoplay muted loop>
+        <source src="video.mp4" type="video/mp4">
+    </video>
+    <div class="overlay"></div>
+
+    <div class="video-controls">
+        <button class="control-btn" onclick="togglePlay()">⏯ PLAY</button>
+        <button class="control-btn" onclick="toggleMute()">🔇 MUTE</button>
+    </div>
+
+    <div class="bio-box">
+        <h1 class="title">ʜɪɪ ᴡᴇʟᴄᴏᴍᴇ 🌟</h1>
+
+        <h2 class="section-title">ᴀʙᴏᴜᴛ ᴍᴇ? 🤔</h2>
+        
+        <div class="bio-line">
+            <span class="label">ɴᴀᴍᴇ:</span>
+            <span class="value">➻ ᴍʀ ᴀʀᴍᴀɴ ✨</span>
+        </div>
+
+        <div class="bio-line">
+            <span class="label">ᴀɢᴇ:</span>
+            <span class="value">➻ 16 - 17 🎂</span>
+        </div>
+
+        <div class="bio-line">
+            <span class="label">ʀᴇʟɪɢɪᴏɴ:</span>
+            <span class="value">➻ ᴍᴜsʟɪᴍ ❤️</span>
+        </div>
+
+        <div class="bio-line">
+            <span class="label">ғʀᴏᴍ:</span>
+            <span class="value">➻ ᴀssᴀᴍ 🌄</span>
+        </div>
+
+        <h2 class="section-title">ᴄᴏɴɴᴇᴄᴛɪᴏɴs 🔗</h2>
+
+        <div class="bio-line">
+            <span class="label">ɢʀᴏᴜᴘ:</span>
+            <a href="https://t.me/team_x_og" class="button">ᴛᴇᴀᴍ x ᴏɢ 🚀</a>
+        </div>
+
+        <div class="bio-line">
+            <span class="label">ᴄʜᴀɴɴᴇʟ:</span>
+            <a href="https://t.me/clickmekarna" class="button">sᴜᴘᴘᴏʀᴛ ᴄʜᴀᴛ 📢</a>
+        </div>
+
+        <h2 class="section-title">ʟɪɴᴋs 🌐</h2>
+
+        <div class="bio-line">
+            <span class="label">ᴘʀᴏғɪʟᴇ:</span>
+            <a href="https://t.me/pb_x01" class="button">ᴍʀ_ᴀʀᴍᴀɴ_ᴏᴡɴᴇʀ ✅</a>
+        </div>
+
+        <div class="bio-line">
+            <span class="label">sᴏᴄɪᴀʟ:</span>
+            <span class="value highlight">ɴᴏᴛ ᴀᴠᴀɪʟᴀʙʟᴇ 🚫</span>
+        </div>
+
+        <h2 class="section-title">ɪɴᴛᴇʀᴇsᴛs & ʜᴏʙʙɪᴇs 🎮</h2>
+
+        <div class="bio-line">
+            <span class="label">🎨➻</span>
+            <span class="value">ɢᴀᴍɪɴɢ & ᴄᴏᴅɪɴɢ</span>
+        </div>
+
+        <div class="bio-line">
+            <span class="label">🎵➻</span>
+            <span class="value">ᴍᴜsɪᴄ & ʀᴇᴀᴅɪɴɢ</span>
+        </div>
+    </div>
+
+    <script>
+        const video = document.getElementById('bg-video');
+        let isMuted = true;
+
+        function togglePlay() {
+            if (video.paused) {
+                video.play();
+                document.querySelector('.control-btn:nth-child(1)').textContent = '⏸ PAUSE';
+            } else {
+                video.pause();
+                document.querySelector('.control-btn:nth-child(1)').textContent = '⏯ PLAY';
+            }
+        }
+
+        function toggleMute() {
+            isMuted = !isMuted;
+            video.mute = isMuted;
+            document.querySelector('.control-btn:nth-child(2)').textContent = isMuted ? '🔇 MUTE' : '🔊 UNMUTE';
+        }
+    </script>
+</body>
+</html>
